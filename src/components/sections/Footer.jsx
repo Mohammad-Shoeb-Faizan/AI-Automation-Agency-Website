@@ -2,13 +2,27 @@
 import { navLinks } from '../../data/navigation';
 
 export default function Footer() {
+    const handleScroll = (e, href) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <footer className="border-t border-white/[0.06] bg-surface-50/30">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
                     {/* Brand */}
                     <div className="md:col-span-2">
-                        <a href="#" className="flex items-center gap-2.5 mb-4">
+                        <a
+                            href="#"
+                            onClick={(e) => handleScroll(e, '#top')}
+                            className="flex items-center gap-2.5 mb-4"
+                        >
                             <div className="w-8 h-8 rounded-lg bg-gradient-accent flex items-center justify-center">
                                 <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white">
                                     <path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z" fill="currentColor" />
@@ -31,6 +45,7 @@ export default function Footer() {
                                 <li key={link.href}>
                                     <a
                                         href={link.href}
+                                        onClick={(e) => handleScroll(e, link.href)}
                                         className="text-sm text-gray-500 hover:text-white transition-colors duration-200"
                                     >
                                         {link.label}

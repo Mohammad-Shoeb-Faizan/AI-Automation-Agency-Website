@@ -44,15 +44,15 @@ export default function Hero() {
                 </p>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                    <Button href="#cta" size="lg">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button size="lg" href="#contact">
                         Book Automation Audit
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
                     </Button>
-                    <Button href="#case-studies" variant="secondary" size="lg">
-                        View Case Studies
+                    <Button variant="secondary" size="lg" href="#services">
+                        Explore Services
                     </Button>
                 </div>
 

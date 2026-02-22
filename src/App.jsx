@@ -7,6 +7,7 @@ import CaseStudies from './components/sections/CaseStudies';
 import HowWeWork from './components/sections/HowWeWork';
 import Metrics from './components/sections/Metrics';
 import About from './components/sections/About';
+import Contact from './components/sections/Contact';
 import CTA from './components/sections/CTA';
 import Footer from './components/sections/Footer';
 
@@ -22,6 +23,7 @@ export default function App() {
                 <HowWeWork />
                 <Metrics />
                 <About />
+                <Contact />
                 <CTA />
             </main>
             <Footer />

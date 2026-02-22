@@ -27,9 +27,20 @@ export default function Button({
 
     const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
+    const handleClick = (e) => {
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        if (props.onClick) props.onClick(e);
+    };
+
     if (href) {
         return (
-            <a href={href} className={classes} {...props}>
+            <a href={href} onClick={handleClick} className={classes} {...props}>
                 {children}
             </a>
         );
